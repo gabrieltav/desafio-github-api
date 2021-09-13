@@ -1,0 +1,11 @@
+.main-nav {
+  padding-left: 40px;
+  width: 1440px;
+  height: 62px;
+  background: #1890ff;
+}
+
+.navbar-text {
+  font-size: 24px;
+  color: #ffffff;
+}

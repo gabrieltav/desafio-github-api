@@ -1,0 +1,78 @@
+.github-search-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+}
+
+.search-container h1 {
+  color: #262626;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.search-container {
+  padding: 10px;
+  background-color: #e6f7ff;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.search-input {
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 16px;
+  text-align: left;
+  padding-left: 10px;
+  height: 40px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.search-input::placeholder {
+  color: #d3cccc;
+}
+
+.search-button {
+  height: 40px;
+  width: 101px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .github-search-container {
+    padding: 40px;
+  }
+  .search-container h1 {
+    font-size: 38px;
+  }
+  .form-container {
+    padding: 10px;
+  }
+  .search-input {
+    width: 298px;
+  }
+}
+
+@media (min-width: 992px) {
+  .github-search-container {
+    padding: 40px 40px;
+  }
+  .search-container {
+    padding: 40px 10px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .git-search-container {
+    padding: 40px 80px;
+  }
+}

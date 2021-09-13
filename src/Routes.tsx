@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from 'pages/Home';
 import Navbar from 'components/Navbar';
-import CepSearch from 'pages/CepSearch';
+import CepSearch from 'pages/GithubSearch';
 
 const Routes = () => (
   <BrowserRouter>

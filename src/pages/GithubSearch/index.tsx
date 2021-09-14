@@ -19,7 +19,6 @@ type Data = {
 
 const GithubSearch = () => {
   const [data, setData] = useState<Data>();
-
   const [formData, setFormData] = useState<FormData>({
     git: '',
   });
@@ -32,7 +31,6 @@ const GithubSearch = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     axios
       .get(`https://api.github.com/users/${formData.git}`)
       .then((response) => {
@@ -77,6 +75,7 @@ const GithubSearch = () => {
             <ResultCard title="Localidade:" description={data.location} />
             <ResultCard title="Nome:" description={data.name} />
           </div>
+          )
         </div>
       )}
     </div>

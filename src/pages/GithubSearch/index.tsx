@@ -6,19 +6,22 @@ import { useState } from 'react';
 import axios from 'axios';
 
 type FormData = {
-  cep: string;
+  git: string;
 };
 
-type Address = {
-  logradouro: string;
-  localidade: string;
+type Data = {
+  url: string;
+  followers: string;
+  location: string;
+  name: string;
+  avatar_url: string;
 };
 
 const GithubSearch = () => {
-  const [address, setAddress] = useState<Address>();
+  const [data, setData] = useState<Data>();
 
   const [formData, setFormData] = useState<FormData>({
-    cep: '',
+    git: '',
   });
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,12 +34,13 @@ const GithubSearch = () => {
     event.preventDefault();
 
     axios
-      .get(`https://viacep.com.br/ws/${formData.cep}/json/`)
+      .get(`https://api.github.com/users/${formData.git}`)
       .then((response) => {
-        setAddress(response.data);
+        setData(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
-        setAddress(undefined);
+        setData(undefined);
         console.log(error);
       });
   };
@@ -50,9 +54,9 @@ const GithubSearch = () => {
             <input
               type="text"
               name="git"
+              value={formData.git}
               className="search-input"
               placeholder="Usuário Github"
-              value={formData.cep}
               onChange={handleChange}
             />
             <button type="submit" className="btn btn-primary search-button">
@@ -60,14 +64,21 @@ const GithubSearch = () => {
             </button>
           </div>
         </form>
-
-        {address && (
-          <>
-            <ResultCard title="Logradouro" description={address.logradouro} />
-            <ResultCard title="Localidade" description={address.localidade} />
-          </>
-        )}
       </div>
+      {data && (
+        <div className="info-search-container">
+          <div>
+            <img src={data?.avatar_url} alt="" />
+          </div>
+          <div className="return-container">
+            <h4>Informações</h4>
+            <ResultCard title="Perfil:" description={data.url} />
+            <ResultCard title="Seguidores:" description={data.followers} />
+            <ResultCard title="Localidade:" description={data.location} />
+            <ResultCard title="Nome:" description={data.name} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

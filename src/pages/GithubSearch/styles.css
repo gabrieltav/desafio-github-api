@@ -4,12 +4,6 @@
   padding: 10px 10px;
 }
 
-.search-container h1 {
-  color: #262626;
-  font-weight: bolder;
-  font-size: 20px;
-}
-
 .search-container {
   padding: 10px;
   background-color: #e6f7ff;
@@ -17,12 +11,17 @@
   margin-bottom: 20px;
 }
 
+.search-container h1 {
+  color: #262626;
+  font-weight: 500;
+  font-size: 20px;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
 .search-input {
   background-color: #fff;
   border: 1px solid #d9d9d9;
@@ -44,6 +43,37 @@
   width: 101px;
   margin-bottom: 10px;
   color: #fff;
+}
+
+.info-search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.info-search-container img {
+  width: 247px;
+  height: 247px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.return-container {
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.return-container h4 {
+  font-size: 18px;
+  color: #1890ff;
+  margin-top: 8px;
+  margin-left: 14px;
 }
 
 @media (min-width: 768px) {
@@ -69,10 +99,29 @@
     padding: 40px 10px;
     margin-bottom: 40px;
   }
+  .info-search-container {
+    padding: 40px 40px;
+    flex-direction: row;
+  }
+  .return-container {
+    padding: 5px;
+    width: 902px;
+    height: 247px;
+    margin-left: 20px;
+  }
 }
 
 @media (min-width: 1200px) {
-  .git-search-container {
-    padding: 40px 80px;
+  .github-search-container {
+    padding: 50px 100px;
+  }
+  .return-container {
+    width: 1350px;
+  }
+  .return-container h4 {
+    margin-left: 5px;
+  }
+  .info-search-container {
+    padding: 40px 40px;
   }
 }

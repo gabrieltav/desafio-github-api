@@ -75,7 +75,6 @@ const GithubSearch = () => {
             <ResultCard title="Localidade:" description={data.location} />
             <ResultCard title="Nome:" description={data.name} />
           </div>
-          )
         </div>
       )}
     </div>
